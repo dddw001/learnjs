@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>选项卡</title>
+  <style>
+    input{
+      background: white;
+    }
+    .active{
+      background: yellow;
+    }
+    div{
+      width: 200px;
+      height: 200px;
+      background: gray;
+      display: none;
+    }
+</style>
+<script>
+  window.onload=function(){
+    var abtn=document.getElementsByTagName('input');
+    var adiv=document.getElementsByTagName('div');
+    for(var i=0;i<abtn.length;i++){
+      abtn[i].index=i;
+      abtn[i].onclick=function(){
+        for(var j=0;j<abtn.length;j++){
+          abtn[j].className='';
+          adiv[j].style.display='none';
+        }
+        this.className='active';
+        adiv[this.index].style.display='block';
+      }
+    }
+  }
+</script>
+</head>
+<body>
+  <input type="button" value="1" class="active">
+  <input type="button" value="2">
+  <input type="button" value="3">
+  <div style="display:block;">111</div>
+  <div>222</div>
+  <div>333</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+点击按钮时，改变按钮们的class和div们的style.display
+选项卡头部：所有按钮className都为空，当前按钮className为active
+选项卡内容：所有div的display都为none，当前div的display为block
+
+当前按钮编号 自定义变量index

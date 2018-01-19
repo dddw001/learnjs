@@ -1,0 +1,33 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+#outermost{
+  width: 200px;
+  margin: 30px auto;
+  border: 1px solid grey;
+}
+h3{
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 30px;
+  padding-left: 10px;
+  cursor: pointer;
+  margin: 1px;
+}
+.up{
+  background:#ccc9c9 url('img/up.gif') right  no-repeat;
+}
+.down{
+  background:#ccc9c9 url('img/down.gif') right  no-repeat;
+}
+ul li{
+  list-style: none;
+  padding-left: 10px;
+  background: #e5dfdf;
+}
+ul li a{
+  text-decoration: none;
+  color: gray;
+  font-size: 12px;
+}

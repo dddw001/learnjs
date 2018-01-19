@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>商品列表全选功能</title>
+  <script>
+    window.onload=function(){
+      var obtn=document.getElementById('btn');
+      var ainput=document.getElementsByTagName('input');
+    obtn.onclick=function(){
+      var flag=false;
+      for(var i=0;i<ainput.length;i++){
+        if(ainput[i].checked===false){
+          flag=true;
+          break;
+        }
+      }
+      if(flag===true){
+        for(var i=0;i<ainput.length;i++){
+         ainput[i].checked=true;
+        }
+      }
+      else{
+        for(var i=0;i<ainput.length;i++){
+         ainput[i].checked=false;
+        }
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <p id="btn">全选</p>
+  <input type="checkbox" /><br/>
+  <input type="checkbox" /><br/>
+  <input type="checkbox" /><br/>
+  <input type="checkbox" /><br/>
+  <input type="checkbox" /><br/>
+  <input type="checkbox" /><br/>
+  <input type="checkbox" /><br/>
+</body>
+</html>

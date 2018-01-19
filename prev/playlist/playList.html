@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>播放列表收缩展开</title>
+  <link rel="stylesheet" href="css1.css">
+</head>
+<body>
+  <div id="outermost">
+    <h3 class="up" onclick="change()">播放列表</h3>
+    <ul>
+      <li><a href="#">玩爱之徒-蔡依林</a></li>
+      <li><a href="#">猜不透-丁当</a></li>
+      <li><a href="#">自导自演-周杰伦</a></li>
+      <li><a href="#">流年-王菲</a></li>
+    </ul>
+  </div>
+  <script>
+    function change(){
+      var atitle=document.getElementsByTagName('h3')[0];
+      var oul=document.getElementsByTagName('ul')[0];
+      //console.log(atitle.className);
+      if(atitle.className==='up'){
+        atitle.className='down';
+        oul.style.display='none';
+      }
+      else{
+        atitle.className='up';
+        oul.style.display='block';
+      }
+    }
+  </script>
+</body>
+</html>

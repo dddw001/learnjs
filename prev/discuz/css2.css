@@ -1,0 +1,72 @@
+img{
+  border: none;
+}
+
+.user_info{
+  position: absolute;
+  left:-2px;
+  top: -11px;
+  background: #fff;
+  border: 1px solid #cdcdcd;
+  width: 450px;
+  display: none;
+}
+
+.user_info .user_pic{
+  width: 160px;
+  float: left;
+  padding-top: 10px;
+}
+.user_info .user_pic .photo{
+  width: 120px;
+  margin: 0 auto -5px;
+}
+.user_info .user_pic .fun{
+  width: 120px;
+  padding-left: 20px;
+}
+.user_info .user_pic .fun li{
+  list-style: none;
+  padding-left: 20px;
+}
+.user_info .user_pic .fun li a{
+  text-decoration: none;
+  color: #000;
+  font-size: 12px;
+}
+.user_info .user_pic .fun .email{
+  background: url('img/pmto.gif') no-repeat;
+}
+.user_info .user_pic .fun .add{
+  background: url('img/addbuddy.gif') no-repeat;
+}
+
+.user_info .info_list{
+  width: 290px;
+  float: left;
+}
+.user_info .info_list dl,ul{
+  padding-top: 10px;
+  width: 290px;
+}
+
+.user_info .info_list dl dt{
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.user_info .info_list dl dt a{
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+.user_info .info_list dl dd span{
+  width: 65px;
+  float: left;
+  font-size: 12px;
+}
+
+.user_info .info_list .ico li{
+  list-style: none;
+  float: left;
+  margin-right: 5px;
+}

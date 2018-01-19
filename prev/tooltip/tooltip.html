@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>提示框</title>
+  <style>
+    #div1{
+      width: 150px;
+      border:1px solid yellow;
+      background: #f0e7a2;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <label
+    onmouseover="document.getElementById('div1').style.display='block';"
+    onmouseout="document.getElementById('div1').style.display='none';"
+  >
+  <input type='checkbox' />2周内自动登陆
+  </label>
+  <div id="div1">
+    请不要在网吧等地方选择此项
+  </div>
+</body>
+</html>

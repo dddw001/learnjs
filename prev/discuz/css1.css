@@ -1,0 +1,74 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.clear:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#outermost{
+  width: 500px;
+  margin:10px auto;
+}
+
+.user{
+  width: 160px;
+  background:#e5edf2;
+  border:1px solid #cdcdcd;
+}
+.user h2{
+  width: 146px;
+  padding-left: 14px;
+  font-size: 12px;
+  border-bottom: 1px dotted #cdcdcd;
+  margin-bottom: 10px;
+  height: 36px;
+  line-height: 36px;
+}
+
+.user .user_wrap{
+  width: 160px;
+  padding-bottom: 30px;
+  position: relative;
+}
+.user .user_wrap .pic_content{
+  width: 120px;
+  margin: auto 20px;
+}
+.user .user_wrap h3{
+  width: 140px;
+  padding-left: 20px;
+  font-size: 12px;
+}
+.user .user_wrap h3 a{
+  color: #000;
+  text-decoration: none;
+}
+.user .user_wrap .grade{
+  width: 140px;
+  padding-left: 20px;
+}
+
+.user .user_wrap .user_related{
+  width: 120px;
+  line-height: 18px;
+  margin: 0 auto;
+  height: auto;
+}
+.user .user_wrap .user_related li{
+  list-style: none;
+}
+.user .user_wrap .user_related li h4{
+  width: 60px;
+  float: left;
+  font-size: 12px;
+  font-weight: normal;
+}
+.user .user_wrap .user_related li p{
+  width: 60px;
+  float: left;
+  font-size: 12px;
+  font-weight: normal;
+}

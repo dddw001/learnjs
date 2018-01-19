@@ -1,0 +1,15 @@
+原理：
+当鼠标移入的时候，显示div1，即把div1的style的display改成block
+当鼠标移出的时候，隐藏div1，即把div1的style的display改成none
+
+事件：
+当...的时候
+onmouseover当鼠标移入的时候
+onmouseout当鼠标移出的时候
+alert弹出一个警告框
+
+元素获取
+id document.getElementById('oid');
+
+属性操作：
+obj.style.display='block'
