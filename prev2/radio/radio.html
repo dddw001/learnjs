@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>单选按钮</title>
+  <script>
+    window.onload=function(){
+      var oform=document.form1;
+      var oinput=oform["play"];
+      var asubmit=oform.subm;
+      asubmit.onclick=function(){
+        for(var i=0;i<oinput.length;i++){
+          if(oinput[i].checked){
+            console.log(oinput[i].value);
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="outermost">
+    <form action="" name="form1">
+      周六你打算：
+    <input type="radio" id="p1" name="play" value="上网"/>
+    <label for="p1">上网</label>
+    
+    <label for="p2">
+      <input type="radio" id="p2" name="play"/>
+      看书
+    </label>
+    <input type="radio" id="p3" name="play"/>
+    <label for="p3">打篮球</label>
+    <input type="radio" id="p4" name="play"/>
+    <label for="p4">学习</label>
+    <input type="button" value="提交" name="subm">
+    </form>
+  </div>
+</body>
+</html>

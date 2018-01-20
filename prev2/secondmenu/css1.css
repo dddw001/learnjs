@@ -1,0 +1,28 @@
+*{margin:0px;padding: 0px;}
+ul li{
+  list-style: none;
+}
+.menu1{width: 102px;display: none;}
+.menu1 li{width: 100px;height: 25px;position: relative;}
+.outermost .title{
+  width: 40px;
+  top: 1.5px;
+  position: relative;
+  background: white;
+}
+.outermost:hover .title{
+  border: 1px solid red;
+  border-bottom: none;
+}
+.outermost:hover .menu1{
+  display: block;
+  border: 1px solid red;
+}
+
+.menu2{width: 200px;height: 200px;position: absolute;top: -1px;right: -202px;border: 1px solid red;display: none;}
+.text{background: #fff;position: relative;width: 100px;height: inherit;z-index: 55;}
+.menu1 li:hover{
+  border: 1px solid red;
+}
+.menu1 li:hover .menu2{display: block;}
+.menu1 li:hover .text{width: 102px;}

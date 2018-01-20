@@ -1,0 +1,11 @@
+获取表单：
+1.利用表单在文档中的索引或表单的name属性来引用表单
+document.forms[i]  //得到页面中的第i个表单
+document.forms[fromName] //得到页面中相应name的表单
+2.利用表单的id属性
+document.getElementById(formId);
+3.利用表单的name属性
+document.formName;//最为常用的一种方式
+获取表单元素：
+1.根据id
+2.根据name

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数码时钟</title>
+  <link rel="stylesheet" href="clock.css">
+  <script>
+    window.onload=function(){
+      var obtn=document.getElementById('btn');
+    var aimg=document.getElementsByTagName('img');
+    function cli(){
+      var odate=new Date();
+      var str=toDouble(odate.getHours())+toDouble(odate.getMinutes())+toDouble(odate.getSeconds());
+      var arr=str.split('');
+      for(var i=0;i<aimg.length;i++){
+        aimg[i].src='img/'+arr[i]+'.png';
+      }
+    }
+    function toDouble(num){
+      if(num<10){
+        return '0'+num;
+      }
+      else{
+        return ''+num;
+      }
+    }
+    obtn.onclick=cli;
+    cli();
+    setInterval(cli,1000);
+    }
+  </script>
+</head>
+<body>
+  <div class="outermost" style="font-size:50px;">
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+    点
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+    分
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+    秒      
+  </div>
+  <input type="button" value="更新" id="btn">
+</body>
+</html>

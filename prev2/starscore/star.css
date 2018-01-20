@@ -1,0 +1,20 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.outermost{
+  width: 135px;
+  margin: 0px auto;
+  overflow: hidden;
+}
+ul li{
+  list-style: none;
+  float: left;
+  width: 27px;
+  height: 30px;
+  background: url('img/star.gif') no-repeat;
+  cursor: pointer;
+}
+.active{
+  background-position: 0px -29px;
+}
