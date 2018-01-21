@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图片展示</title>
+  <link rel="stylesheet" href="show.css">
+  <script>
+    window.onload=function(){
+      var oshow=document.getElementById('show');
+      var oimg=document.getElementsByTagName('img');
+      var otd=document.getElementsByTagName('td');
+      for(var i=1;i<oimg.length;i++){
+        oimg[i].index=i;
+        oimg[i].onmousemove=function(){
+          oshow.src='img/'+(this.index)+'.jpg';
+          //console.log(oshow.src);
+          color(this.index);
+        }
+      }
+      function color(index){
+        for(var i=1;i<otd.length;i++){
+          otd[i].style.borderColor='white';
+        }
+        otd[index].style.borderColor='yellow';
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="outermost">
+    <table style="border-collapse:collapse">
+      <tr>
+        <td rowspan="3" colspan="3"><img src="img/1.jpg" alt="" id="show"></td>
+        <td><img src="img/1.jpg" alt=""></td>
+      </tr>
+      <tr>
+        <td><img src="img/2.jpg" alt=""></td>
+      </tr>
+      <tr>
+        <td><img src="img/3.jpg" alt=""></td>
+      </tr>
+      <tr>
+        <td><img src="img/4.jpg" alt=""></td>
+        <td><img src="img/5.jpg" alt=""></td>
+        <td><img src="img/6.jpg" alt=""></td>
+        <td><img src="img/7.jpg" alt=""></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

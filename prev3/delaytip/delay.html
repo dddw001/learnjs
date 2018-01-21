@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>延时提示框</title>
+  <style>
+    #div1{width: 100px;height: 30px;background: red;}
+    #div2{width: 50px;height: 20px;background: gray;margin: 10px;display: none;}    
+</style>
+<script>
+  window.onload=function(){
+    var odiv1=document.getElementById('div1');
+    var odiv2=document.getElementById('div2');
+    var timer=null;
+    
+    odiv1.onmouseover=odiv2.onmouseover=function(){
+      odiv2.style.display='block';
+      clearTimeout(timer);
+    }
+    odiv1.onmouseout=odiv2.onmouseout=function(){
+      timer=setTimeout(function() {
+        odiv2.style.display='none';
+      }, 300);
+    }
+  }
+</script>
+</head>
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div>
+</body>
+</html>

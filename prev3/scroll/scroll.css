@@ -1,0 +1,38 @@
+*{margin: 0px;padding: 0px;}
+ul li{list-style: none; float: left; }
+.roll{
+  width: 880px;
+  height: 108px;
+  margin: 50px auto;
+  position: relative;
+}
+
+.wrap{
+  width: 712px;
+  height: 108px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn{
+  display: block;
+  width: 68px;
+  height: 68px;
+  position: absolute;
+  top: 20px;
+}
+.btn_left{
+  background: url('img/btn.jpg') -70px -69px no-repeat;
+  left: 0px;
+}
+.btn_right{
+  background: url('img/btn.jpg') 1px -69px no-repeat;
+  right: 0px;
+}
+
+.roll ul{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}

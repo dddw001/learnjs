@@ -1,0 +1,94 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+ul li{
+  list-style: none;
+  float: left;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+
+.nav{
+  width: 500px;
+  height: 36px;
+  padding: 0 10px;
+  background: url('img/nav_bg.gif') repeat-x;
+  margin: 50px auto;
+  position: relative;
+}
+
+.nav .adorn{
+  width: 6px;
+  height: 36px;
+  position: absolute;
+  top: 0px;
+}
+.nav .adorn1{
+  background: url('img/nav_bg.gif') 0 -36px no-repeat;
+  left: 0px;  
+}
+.nav .adorn2{
+  background: url('img/nav_bg.gif') 0 -72px no-repeat;
+  right: 0px;  
+}
+
+.nav li{
+  height: 36px;
+  padding: 0 3px 0 7px;
+  position: relative;
+  cursor: pointer;
+}
+.nav .line{
+  background: url('img/active_bg.gif') 0 -90px no-repeat;
+}
+
+.nav>ul>li>a{
+  padding: 0 10px 0 10px;
+}
+.nav .normal{
+  float: left;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #fff;
+}
+.nav .active{
+  float: left;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #fff;
+  background: url('img/active_bg.gif') right -40px no-repeat;
+}
+
+.float_layer{
+  height: 27px;
+  width: 260px;
+  color: #235e99;
+  padding: 0 10px;
+  background: url('img/nav_bg.gif') 0 -162px repeat-x;
+  position: absolute;
+  top: 46px;
+}
+.float_layer a{
+  float: left;
+  height: 27px;
+  line-height: 22px;
+  font-size: 12px;
+  color: #235e99;
+  text-decoration: none;
+  background: url('img/active_bg.gif') right -207px no-repeat;
+  padding: 0 8px;
+}
+.float_layer a span{
+  float: left;
+  height: 18px;
+  padding-top: 3px;
+  overflow: hidden;
+}
+.float_layer a span:hover{
+  border-bottom: 2px solid black;
+}

@@ -1,0 +1,46 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+ul li{
+  list-style: none;
+}
+img{
+  display: block;
+}
+
+.roll{
+  width: 100px;
+  height: 454px;
+  margin: 0px auto;
+  position: relative;
+  border: 1px solid white;
+}
+.btn{
+  display: block;
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  left: 38px;
+}
+.btn_up{
+  background: url('img/up.gif') no-repeat;
+  top: 0px;  
+}
+.btn_down{
+  background: url('img/down.gif') no-repeat;  
+  bottom: 0px;
+}
+
+.wrap{
+  width: 100px;
+  height: 400px;
+  overflow: hidden;
+  margin: 27px auto;
+  position: relative;
+}
+
+ul{
+  position: absolute;
+  top: 0;
+}
