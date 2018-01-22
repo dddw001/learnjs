@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css函数</title>
+  <style>
+    #div1{
+      width: 200px;
+      height: 200px;
+      background: red;
+    }
+  </style>
+  <script>
+    function css(){
+      if(arguments.length==2){
+        if(odiv.currentStyle){
+          //ie
+          alert(odiv.currentStyle.width);
+        }
+        else{
+          //firefox
+          alert(odiv.getComputedStyle(odiv,false).width);
+
+        }
+      }
+      else if(arguments.length==3){
+        arguments[0].style[arguments[1]]=arguments[2];
+      }
+    }
+    window.onload=function(){
+      var obtn=document.getElementById('btn1');
+      var odiv=document.getElementById('div1');
+      obtn.onclick=function(){
+        css();
+      }
+    }
+  </script>
+</head>
+<body>
+  <input type="button" id="btn1" value="样式">
+  <div id="div1"></div>
+</body>
+</html>
