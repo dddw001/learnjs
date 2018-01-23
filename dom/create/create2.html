@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>创建li</title>
+  <script>
+    window.onload=function(){
+      var oBtn=document.getElementById('btn1');
+      var oTxt=document.getElementById('txt1');
+      var oUl=document.getElementById('ul1');
+      oBtn.onclick=function(){
+        var oLi=document.createElement('li');//创建
+        oLi.innerHTML=oTxt.value;
+        oUl.appendChild(oLi);//插入
+      }
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="txt1">
+  <input type="button" id="btn1" value="创建li">
+  <ul id="ul1">
+    <li>aaa</li>
+  </ul>
+</body>
+</html>
