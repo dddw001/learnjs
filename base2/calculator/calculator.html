@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>计算器</title>
+  <style>
+    *{margin: 0;padding: 0}
+    .outermost{width: 200px;margin: 0 auto;}
+    a{text-decoration: none;color: black;display: block;width: 50px;height: 50px;line-height: 50px;text-align: center;}
+    #txt{width: 200px;border: 2px solid red;text-align: right;}
+</style>
+<script>
+  window.onload=function(){
+    //var otd=document.getElementsByTagName('td');
+    //console.log(x.innerText);
+    var fTxt=document.getElementById('txt');
+    var oA=document.getElementsByTagName('a');
+    var result;
+    for(var i=0;i<oA.length;i++){
+      oA[i].index=i;
+      oA[i].onclick=function(){
+        //console.log(this);
+        if(oA[this.index].innerText==='='){
+          result=fTxt.value.replace('÷','/');
+          result=result.replace('×','*');
+          //console.log(eval("1"+"*"+"8"));
+          console.log(eval(result));
+          fTxt.value+='='+eval(result);          
+          return;
+        }
+        if(this.className==='num'){
+          fTxt.value+=oA[this.index].innerText;
+        }
+        else if(this.id==='clear'){
+          fTxt.value='';
+        }
+        else if(this.id==='delete'){
+          fTxt.value=fTxt.value.substring(0,fTxt.value.length-1);
+        }
+        else{
+          var x=fTxt.value.substring(fTxt.value.length-1,fTxt.value.length);
+          var y=oA[this.index].innerText;
+          //符号不能是第一个
+          if(fTxt.value.length===0&&(y==='='||y==='-'||y==='÷'||y==='×'||y==='.'||y==='%')){
+            fTxt.value='';
+          }
+          //符号不能连续出现
+          else if(x==='='||x==='-'||x==='÷'||x==='×'||x==='.'){
+            fTxt.value+='';
+          }
+          else{
+            fTxt.value+=oA[this.index].innerText;        
+          }
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body>
+  <div class="outermost">
+    <input type="text" id="txt">
+    <table border="1px" style="border-collapse:collapse">
+      <tr>
+        <td><a href="#" id="clear">C</a></td>
+        <td><a href="#" id="division">÷</a></td>
+        <td><a href="#" id="multiplication">×</a></td>
+        <td><a href="#" id="delete">&larr;</a></td>        
+      </tr>
+      <tr>
+        <td><a href="#" class="num">7</a></td>
+        <td><a href="#" class="num">8</a></td>
+        <td><a href="#" class="num">9</a></td>
+        <td><a href="#">-</a></td>        
+      </tr>
+      <tr>
+        <td><a href="#" class="num">4</a></td>
+        <td><a href="#" class="num">5</a></td>
+        <td><a href="#" class="num">6</a></td>
+        <td><a href="#">+</a></td>        
+      </tr>
+      <tr>
+        <td><a href="#" class="num">1</a></td>
+        <td><a href="#" class="num">2</a></td>
+        <td><a href="#" class="num">3</a></td>
+        <td rowspan="2"><a href="#">=</a></td>        
+      </tr>
+      <tr>
+        <td><a href="#">%</a></td>
+        <td><a href="#" class="num">0</a></td>
+        <td><a href="#">.</a></td>  
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
