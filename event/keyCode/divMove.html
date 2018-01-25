@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #div1{
+      width: 100px;
+      height: 100px;
+      background: #ccc;
+      position: absolute;
+    }
+  </style>
+  <script>
+    var timer=null;
+    document.onkeydown=function(ev){
+        var oEvent=ev||event;
+      var oDiv=document.getElementById('div1');
+      
+      //<- 37
+      //-> 39
+      //上 38
+      //下 40
+      //alert(oEvent.keyCode); 
+      if(oEvent.keyCode==37){
+          oDiv.style.left=oDiv.offsetLeft-1+'px';
+      }
+      if(oEvent.keyCode==39){
+        oDiv.style.left=oDiv.offsetLeft+1+'px';
+      }
+      if(oEvent.keyCode==38){
+        oDiv.style.top=oDiv.offsetTop-1+'px';
+      }
+      if(oEvent.keyCode==40){
+          oDiv.style.top=oDiv.offsetTop+1+'px';
+      }
+    }
+
+    document.onkeyup=function(ev){
+      clearInterval(timer);
+    }
+  </script>
+</head>
+<body>
+  <div id="div1"></div>
+</body>
+</html>
