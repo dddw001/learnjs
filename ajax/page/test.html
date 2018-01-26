@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='../ajax.js'></script>
+	<script>
+		window.onload=function(){
+			var oUl=document.getElementById('ul1');
+			var aBtn=document.getElementsByTagName('a');
+			for(var i=0;i<aBtn.length;i++){
+				aBtn[i].index=i;
+				aBtn[i].onclick=function(){
+					ajax('page'+(this.index+1)+'.txt',function(str){
+						var aData=eval(str);
+						oUl.innerHTML='';
+						for(var i=0;i<aData.length;i++){
+							var oLi=document.createElement('li');
+							oLi.innerHTML='<strong>'+aData[i].user+'</strong>'+
+							'<i>'+aData[i].pass+'</i>';
+							oUl.appendChild(oLi);
+						}
+					})
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="ul1"></ul>
+	<a href="#">1</a>
+	<a href="#">2</a>
+	<a href="#">3</a>
+</body>
+</html>

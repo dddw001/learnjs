@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../ajax.js"></script>
+	<script>
+		window.onload=function(){
+			var oBtn=document.getElementById('btn1');
+			oBtn.onclick=function(){
+				ajax('abc.txt?t=new Date().getTime()',function(str){
+					alert(str);
+				})
+			}
+		}
+		/*
+		Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https.
+ajax @ ajax.js:19
+		谷歌默认禁止跨域访问
+		 */
+	</script>
+</head>
+<body>
+	点击按钮时读取abc.txt中的内容
+	<input type="button" value="读取" id="btn1">
+</body>
+</html>
