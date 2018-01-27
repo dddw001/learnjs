@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    #div1{
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var timer=null;
+    function startMove(iTarget){
+      var oDiv=document.getElementById('div1');
+      clearInterval(timer);//避免多次点击开启多个定时器问题
+      timer=setInterval(function(){
+        var iSpeed=Math.ceil((iTarget-oDiv.offsetLeft)/8);
+        console.log(oDiv.offsetLeft);
+        if(oDiv.offsetLeft>=iTarget){
+          //console.log(oDiv.offsetLeft);
+          clearInterval(timer);//清除定时器但函数还会继续执行
+        }
+        else{
+          oDiv.style.left=oDiv.offsetLeft+iSpeed+'px';          
+        }
+      },30)
+    }
+  </script>
+</head>
+<body>
+  <input type="button" value="开始运动" onclick="startMove(300)">
+  <div id="div1"></div>
+</body>
+</html>
