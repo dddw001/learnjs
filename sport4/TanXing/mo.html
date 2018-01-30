@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    #div1{width: 100px;height: 100px;background: red;position: absolute;top: 50px;}
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var iSpeed=20;    
+    function startMove(){
+      var oDiv=document.getElementById('div1');
+      setInterval(function(){
+        iSpeed*=0.95;
+        oDiv.style.left=oDiv.offsetLeft+iSpeed+'px';
+        document.getElementById('txt1').value+=iSpeed+'\n';
+      },30)
+    }
+  </script>
+</head>
+<body>
+  <textarea name="" id="txt1" cols="30" rows="10"></textarea>
+  <input type="button" value="开始运动" onclick="startMove()">
+  <div id="div1"></div>
+</body>
+</html>
