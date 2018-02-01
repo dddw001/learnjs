@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Person(name,sex){
+      this.name=name;
+      this.sex=sex;
+    }
+    Person.prototype.showName=function(){
+      alert(this.name);
+    }
+    Person.prototype.showSex=function(){
+      alert(this.sex);
+    }
+    // var oP1=new Person('blue','男');
+    // oP1.showName();
+
+    function Worker(name,sex,job){
+      Person.call(this,name,sex);
+      this.job=job;
+    }
+    //原型链
+    //Worker.prototype=Person.prototype;
+    //Work会影响父类
+    
+    for(var i in Person.prototype){
+      Worker.prototype[i]=Person.prototype[i];
+    }
+    Worker.prototype.showJob=function(){
+      alert(this.job);
+    }
+    var oW1=new Worker('b','男','打杂');
+    oW1.showName();
+    oW1.showJob();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
