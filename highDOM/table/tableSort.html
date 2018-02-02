@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    #ul1{background: red;}
+    #ul2{background: green;}
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    window.onload=function(){
+      var oBtn=document.getElementById('btn1');
+      var oTab=document.getElementById('tab1');
+      var bAsc=true;//是否升序
+
+      oBtn.onclick=function(){
+        var arr=[];
+        //1.转成数组
+        for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+          arr[i]=oTab.tBodies[0].rows[i];
+        }
+        //2.数组排序
+        arr.sort(function(tr1,tr2){
+          if(bAsc){
+            return parseInt(tr1.cells[0].innerHTML)-parseInt(tr2.cells[0].innerHTML);
+          }
+          else{
+            return parseInt(tr2.cells[0].innerHTML)-parseInt(tr1.cells[0].innerHTML);            
+          }
+        })
+        //3.重新插入
+        for(var i=0;i<arr.length;i++){
+          oTab.tBodies[0].appendChild(arr[i]);
+        }
+
+        // if(bAsc){
+        //   bAsc=false;
+        // }
+        // else{
+        //   bAsc=true;
+        // }
+        bAsc=!bAsc;
+      }
+    }  
+  </script>
+</head>
+<body>
+  <input id="btn1" type="button" value="移动">
+  <table id="tab1" border="1" style="width:400px">
+    <thead>
+      <td>ID</td>
+      <td>姓名</td>
+      <td>操作</td>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>aaa</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>ccc</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>bbb</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>ddd</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>eee</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
