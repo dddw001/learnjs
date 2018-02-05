@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    #div1{width: 100px;height: 100px;background: red;position: absolute;}
+    #div2{width: 100px;height: 100px;background: green;position: absolute;}    
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    window.onload=function(){
+      drag('div1');
+      drag('div2');
+    }
+    function drag(id){
+      var oDiv=document.getElementById(id);
+
+      oDiv.onmousedown=function(ev){
+        var oEvent=ev||event;
+        var disX=oEvent.clientX-oDiv.offsetLeft;
+        var disY=oEvent.clientY-oDiv.offsetTop;
+
+        document.onmousemove=function(ev){
+          var oEvent=ev||event;
+          oDiv.style.left=oEvent.clientX-disX+'px';
+          oDiv.style.top=oEvent.clientY-disY+'px';
+        }
+
+        document.onmouseup=function(){
+          document.onmousemove=null;
+          document.onmouseup=null;
+        }
+
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div>
+</body>
+</html>

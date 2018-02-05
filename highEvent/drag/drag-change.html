@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    #div1{width: 10px;height: 10px;background: red;position: absolute;bottom: 0;right: 0;}
+    #div2{width: 200px;height:150px;position: relative;background: #ccc; }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    window.onload=function(){
+      var oDiv=document.getElementById('div1');
+      var oDiv2=document.getElementById('div2');
+
+      oDiv.onmousedown=function(ev){
+        var oEvent=ev||event;
+        var disX=oEvent.clientX-oDiv.offsetLeft;
+        var disY=oEvent.clientY-oDiv.offsetTop;
+
+        document.onmousemove=function(ev){
+          var oEvent=ev||event;
+          //加oDiv的宽高是为了解决鼠标按下时oDiv2向左上缩
+          oDiv2.style.width=oEvent.clientX-disX+oDiv.offsetWidth+'px';
+          oDiv2.style.height=oEvent.clientY-disY+oDiv.offsetHeight+'px';
+        }
+
+        document.onmouseup=function(){
+          document.onmousemove=null;
+          document.onmouseup=null;
+        }
+
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="div2">
+    <div id="div1"></div>    
+  </div>
+</body>
+</html>

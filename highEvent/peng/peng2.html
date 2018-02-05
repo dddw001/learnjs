@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    #div1{width: 100px;height: 100px;background: red;position: absolute;z-index: 2;}
+    #div2{width: 100px;height: 100px;background: yellow;position: absolute;left: 150px;top: 150px;z-index: 1;
+    }
+    .box{position: absolute;border:1px dashed black;}        
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    window.onload=function(){
+      var oDiv=document.getElementById('div1');
+      var oDiv2=document.getElementById('div2');
+
+      oDiv.onmousedown=function(ev){
+        var oEvent=ev||event;
+        var disX=oEvent.clientX-oDiv.offsetLeft;
+        var disY=oEvent.clientY-oDiv.offsetTop;
+
+        var oNewDiv=document.createElement('div');
+        oNewDiv.className='box';
+        oNewDiv.style.width=oDiv.offsetWidth+'px';
+        oNewDiv.style.height=oDiv.offsetHeight+'px';
+        oNewDiv.style.left=oDiv.offsetLeft+'px';
+        oNewDiv.style.top=oDiv.offsetTop+'px';
+        document.body.appendChild(oNewDiv);
+
+        document.onmousemove=function(ev){
+          var oEvent=ev||event;
+          oNewDiv.style.left=oEvent.clientX-disX+'px';
+          oNewDiv.style.top=oEvent.clientY-disY+'px';
+        }
+
+        document.onmouseup=function(){
+          document.onmousemove=null;
+          document.onmouseup=null;
+          oDiv.style.left=oNewDiv.style.left;
+          oDiv.style.top=oNewDiv.style.top;
+
+          document.body.removeChild(oNewDiv);
+        }
+
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="div1"></div>
+</body>
+</html>
