@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    #div1{width: 100px;height: 100px;background: red;display: none;}
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="jquery-1.7.1.js"></script>
+  <script>
+    $(function(){
+      $('input').toggle(function(){
+        $('#div1').show();
+      },function(){
+        $('#div1').hide();
+      })
+    })
+  </script>
+</head>
+<body>
+  <input type="button" value="隐藏">
+  <div id="div1"></div>
+</body>
+</html>

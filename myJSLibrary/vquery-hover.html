@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    #div1{width: 100px;height: 100px;background: red;}
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="VQuery.js"></script>
+  <script>
+    $(function(){
+      $('#btn1').click(function(){
+        $('#div1').show();
+      });
+      $('#btn2').click(function(){
+        $('#div1').hide();
+      });
+    })
+  </script>
+</head>
+<body>
+  <div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    ul li{list-style: none;float: left;}
+    .box{
+      clear: both;
+      width: 150px;
+      height: 100px;
+      text-align: center;
+      border: 1px solid red;
+      margin-left: 15px;
+    }
+    .content{display: none;}
+    .link{background: #ccc;margin-right: 2px;}
+    .hover{background: red;}
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./VQuery.js"></script>
+  <script>
+    $(function(){
+      var aBtn=$('#tab').find('ul').find('li');
+      var aContext=$('#tab').find('.box').find('.content');
+      aBtn.click(function(){
+        aBtn.attr('className','link');
+        $(this).attr('className','hover');
+        aContext.hide();
+        aContext.eq($(this).index()).show();
+      })
+    })
+  </script>
+</head>
+<body>
+  <div id="tab">
+    <ul>
+      <li class="hover"><span class="btn btn1">btn1</span></li>
+      <li class="link"><span class="btn btn2">btn2</span></li>
+      <li class="link"><span class="btn btn3">btn3</span></li>      
+    </ul>
+    <div class="box">
+      <div class="content" style="display:block;">content1</div>
+      <div class="content">content2</div>
+      <div class="content">content3</div>      
+    </div>
+  </div>
+</body>
+</html>
